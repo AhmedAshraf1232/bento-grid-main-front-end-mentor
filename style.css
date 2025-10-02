@@ -1,0 +1,308 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{ 
+    --purple-100:hsl(254, 88%, 90%);
+    --purple-500:hsl(256, 67%, 59%) ;
+    --yellow-100:hsl(31, 66%, 93%);
+    --yellow-500:hsl(39, 100%, 71%) ;
+    --white:hsl(0, 0%, 100%) ;
+    --black: hsl(0, 0%, 7%) ;
+}
+html{ 
+    font-size: 62.5%;
+}
+body{ 
+    margin: auto 4rem;
+    background-color: #f2f2f2;
+    font-family: "Dm Sans";
+    min-height: 100vh;
+    font-size: 1.8rem;
+    line-height: 1;
+    display: grid;
+    place-content: center;
+
+}
+img{
+   max-width: 100%;
+}
+.sm-text{ 
+    font-size: 2.1rem;
+    font-weight: 400 ;
+}
+.lg-text{ 
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+.md-text{ 
+    font-size: 2.35rem;
+    font-weight: 500;
+}
+.xlg-text{ 
+    font-size: 5.6rem;
+    font-weight: 500;
+}
+.slg-text{ 
+    font-size: 3rem;
+    font-weight: 500;
+}
+.bento-grid{ 
+    /* width:100%; */
+    margin: 1rem;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 7.5rem;
+    gap: 2rem;
+    grid-template-areas:
+     'box1 box2 box2 box3'
+     'box1 box2 box2 box3'
+     'box1 box2 box2 box3'
+     'box1 box2 box2 box3'
+     'box1 box5 box6 box3'
+     'box4 box5 box6 box3'
+     'box4 box5 box6 box3'
+     'box4 box7 box8 box8'
+     'box4 box7 box8 box8'
+     'box4 box7 box8 box8'
+     ;
+}
+.bento-grid .item{ 
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: hsl(0, 0%, 100%,0.1);
+}
+.bento-grid .item:nth-child(1){ 
+    background-color: var(--yellow-100);
+    grid-area:box1 ;
+    padding: 6rem 2rem 0 2.5rem;
+}
+.bento-grid .item:nth-child(1) em{
+    color: var(--purple-500);
+}
+.bento-grid .item:nth-child(1) img{ 
+    margin-top: 3rem;
+}
+
+.bento-grid .item:nth-child(2){ 
+    grid-area: box2;
+    padding: 3rem;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bento-grid .item:nth-child(2) img{
+    margin-top: 3rem;
+    width: 16rem;
+}
+
+.bento-grid .item:nth-child(2),
+.bento-grid .item:nth-child(8){ 
+    background-color: var(--purple-500);
+    color: var(--white);
+}
+.bento-grid .item:nth-child(3){ 
+    background-color: var(--purple-100);
+}
+.bento-grid .item:nth-child(4),
+.bento-grid .item:nth-child(6){
+    background-color: var(--yellow-500);
+    color: var(--black);
+}
+.bento-grid .item:nth-child(5),
+.bento-grid .item:nth-child(7){
+    background-color: var(--white);
+    color: var(--black);
+
+}
+.bento-grid .item:nth-child(1){ 
+    margin-top: 1rem;
+}
+.bento-grid .item:nth-child(2) .emphasis{
+    color: var(--yellow-500);
+}
+
+.bento-grid .item:nth-child(3){ 
+    grid-area: box3;
+    padding: 3rem 2rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+.bento-grid .item:nth-child(3) img{
+    position: absolute;
+    height: 35rem;
+    object-fit: cover;
+    object-position: left;
+    top: 14.5rem;
+}
+.bento-grid .item:nth-child(4){
+    grid-area: box4;
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.bento-grid .item:nth-child(4) img{
+    margin-top: 5rem;
+}
+.bento-grid .item:nth-child(5){
+    grid-area: box5;
+    padding: 1.6rem;
+    position: relative;
+}
+.bento-grid .item:nth-child(5) p{ 
+    margin-top: 13rem;
+}
+.bento-grid .item:nth-child(5) img{ 
+    position: absolute;
+    height: 6rem;
+    top: 2.5rem;
+}
+
+.bento-grid .item:nth-child(6){
+    grid-area: box6;
+    position: relative;
+    padding: 1.3rem 2rem;
+}
+.bento-grid .item:nth-child(6) p{ 
+    padding-bottom: 2.1rem;
+}
+
+.bento-grid .item:nth-child(7){
+    grid-area: box7;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.bento-grid .item:nth-child(7) h1{ 
+    font-size: 6rem;
+}
+.bento-grid .item:nth-child(8){
+    grid-area: box8;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1.75fr 2fr;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+}
+.bento-grid .item:nth-child(8) img{ 
+    margin-bottom: 1rem;
+}
+
+@media(max-width:1024px){ 
+    .bento-grid{ 
+        grid-auto-rows:initial ;
+        grid-template-areas: 
+        'box1 box1 box2 box2'
+        'box1 box1 box2 box2'
+        'box3 box3 box4 box4'
+        'box3 box3 box4 box4'
+        'box5 box5 box6 box6'
+        'box5 box5 box6 box6'
+        'box7 box7 box8 box8'
+        'box7 box7 box8 box8'
+        ;
+    }
+
+    .bento-grid .item:nth-child(6) p {
+    padding-bottom: 34.1rem;
+    }
+    .bento-grid .item:nth-child(6) img {
+    margin-top: 20rem;
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+}
+.bento-grid .item:nth-child(8) {
+    grid-template-columns: 1fr;
+}
+.bento-grid .item:nth-child(8) img{ 
+
+    justify-items: center;
+}
+.bento-grid .item:nth-child(3) img{
+    position: revert;
+    height: fit-content;
+}
+.bento-grid .item:nth-child(7){ 
+    justify-content: space-evenly;
+}
+}
+@media(max-width:750px){ 
+    .bento-grid{ 
+        grid-template-areas: 
+            'box2'
+            'box2'
+            'box5'
+            'box6'
+            'box3'
+            'box3'
+            'box8'
+            'box8'
+            'box7'
+            'box7'
+            'box1'
+            'box1'
+            'box4'
+            'box4'
+        ;
+        align-items: center;
+    }
+
+    .bento-grid .item:nth-child(6) {
+    grid-area: box6;
+    position: relative;
+    padding: 4.3rem 2rem 0 3.3rem;
+}
+    .bento-grid .item:nth-child(6) p{
+        padding-bottom: 0;
+}
+    img{ 
+        max-width: 80%;
+    }
+
+    .bento-grid .item:nth-child(6) img{
+        width: fit-content;
+        position: revert;
+        margin-top: 2rem;
+    }
+    .bento-grid .item:nth-child(5) p {
+    margin-top: 8rem;
+    }
+
+    .bento-grid .item:nth-child(6),
+    .bento-grid .item:nth-child(3),
+    .bento-grid .item:nth-child(4),
+    .bento-grid .item:nth-child(8) {
+        align-items: center;
+    }
+}
+@media(max-width:400px){ 
+    html{
+            font-size: 50%;
+    }
+    img{ 
+        max-width: 75%;
+    }
+    .bento-grid .item:nth-child(5) p {
+    margin-top: 8rem;
+}
+    .bento-grid .item:nth-child(6) p {
+        padding-bottom: 100px;
+    }
+    .bento-grid .item:nth-child(6) img {
+        width: fit-content;
+        position: absolute;
+        /* margin-top: 2rem; */
+        bottom: -80px;
+    }
+}
